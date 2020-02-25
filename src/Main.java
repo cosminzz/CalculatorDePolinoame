@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        new InputData();
+        SolveEquation solveEquation = new SolveEquation();
+
+        solveEquation.equationSolver();
     }
 }
