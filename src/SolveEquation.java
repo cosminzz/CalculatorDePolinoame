@@ -1,22 +1,27 @@
 public class SolveEquation {
     InputData input = new InputData();
+    StringToIntConverter converter = new StringToIntConverter();
 
     public void equationSolver() {
         //Insert the numbers and display the equation
         input.inputNumbers();
 
         //Get the inserted numbers
-        int firstNr = input.getFirstNr();
-        int secondNr = input.getSecondNr();
+        String firstNr = input.getFirstNr();
+        String secondNr = input.getSecondNr();
 
         //Get the result
-        System.out.println(solver(firstNr, secondNr));
+        System.out.println("x=" + solver(firstNr, secondNr));
     }
 
-    private int solver(int firstNr, int secondNr) {
-        int division = secondNr / firstNr;
+    private int solver(String firstNr, String secondNr) {
+        converter.covertToInt(firstNr, secondNr);
 
-        System.out.println(division);
+        int convertedFirstNumber = converter.getFirstNr();
+        int convertedSecondNumber = converter.getSecondNr();
+
+        int division = convertedSecondNumber / convertedFirstNumber;
+
         return (int) Math.sqrt(division);
     }
 }

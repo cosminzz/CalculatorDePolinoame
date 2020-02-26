@@ -2,32 +2,27 @@ import java.util.Scanner;
 
 public class InputData {
     private Scanner in = new Scanner(System.in);
-    InputToStringConversion strInput = new InputToStringConversion();
 
-    private int firstNr;
-    private int secondNr;
+    private String firstNr;
+    private String secondNr;
 
     public void inputNumbers() {
         System.out.println("Solve the following equation > aX^2=b");
 
         System.out.println("Enter the first number (a)");
-        this.firstNr = in.nextInt();
+        this.firstNr = in.next();
 
         System.out.println("Enter the second number (b)");
-        this.secondNr = in.nextInt();
+        this.secondNr = in.next();
 
-        displayEqInConsole();
+        System.out.println(this.firstNr + "x^2 = " +  this.secondNr);
     }
 
-    private void displayEqInConsole() {
-        strInput.stringInput(firstNr, secondNr);
-    }
-
-    public int getFirstNr() {
+    public String getFirstNr() {
         return firstNr;
     }
 
-    public int getSecondNr() {
+    public String getSecondNr() {
         return secondNr;
     }
 }
